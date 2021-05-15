@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-mport requests
+import requests
 from bs4 import BeautifulSoup
 
 inp=input()
