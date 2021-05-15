@@ -1,16 +1,17 @@
 ### Hi there 👋
 
-<!--
-**tamillit/tamillit** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+mport requests
+from bs4 import BeautifulSoup
 
-Here are some ideas to get you started:
+inp=input()
+web= requests.get("https://ta.wiktionary.org/wiki/+inp")
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+data=web.content
+
+soup=BeautifulSoup(data,features="html.parser")
+
+tag=soup.find_all("ol","li")
+a=1
+for i in tag:
+           print(a,".",i.text)
+           a=a+1
